@@ -6,7 +6,6 @@
   background-color: rgb(221, 235, 235);
   height: 100vh;
   align-items: center;
-  padding-left: 7%;
 }
 
 .mainPage-txt-area {
@@ -27,4 +26,30 @@
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
   font-size: 25px;
+}
+
+.mainPage-img {
+  width: 600px;
+}
+
+.mainPage-btn {
+  border: none;
+  width: 190px;
+  height: 55px;
+  border-radius: 70px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  color: rgb(14, 101, 178);
+}
+
+.mainPage-btn:hover {
+  border: 1px solid black;
+  font-weight: 800;
+}
+
+.mainPage-btn:focus {
+  color: black;
+  border: none;
+  background-color: rgb(9, 126, 146);
 }

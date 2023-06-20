@@ -17,8 +17,8 @@ const MainPage = () => {
           </p>
         </div>
 
-        <div>
-          <button>Show my user</button>
+        <div className='mainPage-btn-cnt'>
+          <button className='mainPage-btn'>Show my users</button>
         </div>
       </div>
       <div className='mainPage-img-cnt'>
