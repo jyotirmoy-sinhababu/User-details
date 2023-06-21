@@ -4,7 +4,7 @@ import { BiPlus } from 'react-icons/bi';
 
 import './addBtnStyle.css';
 
-const AddBtn = () => {
+const AddBtn = ({ setIsForm }) => {
   return (
     <div className='addBtn-cnt'>
       <button className='addBtn'>
