@@ -18,11 +18,11 @@ const UserLIst = () => {
       </div>
       <div>
         <Modal isOpen={isOpen}>
-          <UserForm />
+          <UserForm setIsOpen={setIsOpen} />
         </Modal>
       </div>
       <div>
-        <AddBtn setIsOpen={setIsOpen} />
+        <AddBtn isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     </div>
   );

@@ -4,10 +4,15 @@ import { BiPlus } from 'react-icons/bi';
 
 import './addBtnStyle.css';
 
-const AddBtn = ({ setIsOpen }) => {
+const AddBtn = ({ setIsOpen, isOpen }) => {
   return (
     <div className='addBtn-cnt'>
-      <button className='addBtn'>
+      <button
+        onClick={() => {
+          setIsOpen(true);
+        }}
+        className='addBtn'
+      >
         <BiPlus />
       </button>
     </div>
