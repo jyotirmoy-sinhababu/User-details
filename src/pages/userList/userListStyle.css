@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Be+Vietnam+Pro&family=Bruno+Ace+SC&family=Epilogue&family=Montserrat+Alternates:wght@200&family=Nunito+Sans:ital,wght@0,400;1,200&display=swap');
+
 .userList-noData-msg-cnt {
   display: flex;
   justify-content: center;
@@ -5,11 +7,5 @@
   height: 600px;
 }
 
-.userList-addBtn-cnt {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 10%;
-  align-items: center;
-  gap: 20px;
-  height: 90px;
+.mainUser-cnt {
 }

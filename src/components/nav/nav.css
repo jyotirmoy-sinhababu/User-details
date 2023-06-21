@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Be+Vietnam+Pro&family=Bruno+Ace+SC&family=Epilogue&family=Montserrat+Alternates:wght@200&family=Nunito+Sans:ital,wght@0,400;1,200&display=swap');
+
+.nav-cnt {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+}
+
+.nav-txt {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 900;
+  font-size: 25px;
+  color: hsl(4, 100%, 67%);
+}
+
+.nav-search-bar {
+  width: 280px;
+  height: 52px;
+  border-radius: 70px;
+  padding-left: 25px;
+  font-size: 19px;
+  font-weight: 500;
+  font-family: 'Nunito Sans', sans-serif;
+  border: 0.8px solid hsl(4, 83%, 71%);
+  color: hsl(235, 18%, 26%);
+}

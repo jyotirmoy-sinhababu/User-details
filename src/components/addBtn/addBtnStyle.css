@@ -1,0 +1,10 @@
+.addBtn-cnt {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.addBtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}

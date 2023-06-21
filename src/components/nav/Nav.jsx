@@ -1,16 +1,18 @@
 import React from 'react';
 
+import './nav.css';
+
 const Nav = () => {
   return (
-    <div>
-      <div>
-        <h1>Keep track..</h1>
+    <div className='nav-cnt'>
+      <div className='nav-txt-cnt'>
+        <p className='nav-txt'>Keep track..</p>
       </div>
-      <form>
+      <form className='nav-form'>
         <input
           type='search'
           placeholder='search by name'
-          className='search-bar'
+          className='nav-search-bar'
           name='userName'
         />
       </form>
