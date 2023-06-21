@@ -1,6 +1,8 @@
 import React from 'react';
 import { RxCross1 } from 'react-icons/rx';
 
+import './userFormStyle.css';
+
 import user from '../../assests/images/computer-user.png';
 
 const UserForm = ({ setIsOpen }) => {
@@ -22,11 +24,14 @@ const UserForm = ({ setIsOpen }) => {
         </div>
         <form className='form'>
           <label>Enter the name</label>
-          <input className='' type='text' />
+          <input className='inputField' type='text' />
           <label>Enter the email</label>
-          <input className='' type='email' />
+          <input className='inputField' type='email' />
           <label>Enter the phone number</label>
-          <input className='' type='number' />
+          <input className='inputField' type='number' />
+          <div className='form-btn-cnt'>
+            <button className='form-btn'>SAVE</button>
+          </div>
         </form>
       </div>
     </div>

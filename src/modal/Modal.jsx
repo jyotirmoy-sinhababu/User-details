@@ -4,7 +4,7 @@ import './modalStyle.css';
 const Modal = ({ isOpen, children }) => {
   if (!isOpen) return null;
   return ReactDOM.createPortal(
-    <div>{children}</div>,
+    <div className='modal-cnt'>{children}</div>,
     document.getElementById('portal')
   );
 };

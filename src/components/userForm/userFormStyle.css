@@ -1,0 +1,82 @@
+.main-userForm-cnt {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 500px;
+  border: 2px solid green;
+  border-radius: 17px;
+  animation: color 0.5s linear;
+  background-color: aliceblue;
+}
+
+.userForm-btn-cnt {
+  display: flex;
+  justify-content: flex-end;
+  padding: 40px;
+}
+
+.userForm-btn {
+  border-radius: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  color: red;
+  background-color: transparent;
+}
+
+.form-cnt {
+  display: flex;
+  justify-content: space-around;
+}
+
+.userForm-img-cnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgba(193, 248, 193, 0.6);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.inputField {
+  width: 320px;
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid rgba(193, 248, 193, 0.9);
+  padding: 0 6px;
+  outline: none;
+  font-size: 19px;
+}
+
+.form-btn-cnt {
+  display: flex;
+  padding-top: 20px;
+  justify-content: flex-end;
+}
+
+.form-btn {
+  max-width: 230px;
+  padding: 0 20%;
+  height: 50px;
+  border-radius: 8px;
+  background-color: rgba(193, 248, 193, 0.9);
+  border: none;
+  font-style: bold;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@keyframes color {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgb(193, 248, 193);
+  }
+}

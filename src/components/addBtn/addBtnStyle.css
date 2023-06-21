@@ -14,5 +14,6 @@
   align-items: center;
   cursor: pointer;
   border: none;
+  position: fixed;
   background-color: rgb(198, 225, 248);
 }
