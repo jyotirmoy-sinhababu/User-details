@@ -1,0 +1,15 @@
+.userList-noData-msg-cnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+
+.userList-addBtn-cnt {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10%;
+  align-items: center;
+  gap: 20px;
+  height: 90px;
+}

@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './mainPageStyle.css';
 
 import workingPersonImg from '../../assests/images/illustration-working.svg';
 
 const MainPage = () => {
+  const navigate = useNavigate();
   return (
     <div className='mainPage-cnt'>
       <div className='mainPage-txt-area'>
@@ -18,7 +20,14 @@ const MainPage = () => {
         </div>
 
         <div className='mainPage-btn-cnt'>
-          <button className='mainPage-btn'>Show my users</button>
+          <button
+            onClick={() => {
+              navigate('/user');
+            }}
+            className='mainPage-btn'
+          >
+            Show my users
+          </button>
         </div>
       </div>
       <div className='mainPage-img-cnt'>
