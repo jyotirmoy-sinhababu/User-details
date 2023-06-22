@@ -13,7 +13,6 @@ const UserForm = ({ setIsOpen }) => {
   const handleChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
-  console.log(userData);
   return (
     <div className='main-userForm-cnt'>
       <div className='userForm-btn-cnt'>
@@ -32,7 +31,8 @@ const UserForm = ({ setIsOpen }) => {
         </div>
         <form
           className='form'
-          onSubmit={() => {
+          onSubmit={(e) => {
+            e.preventDefault();
             controlSave();
           }}
         >

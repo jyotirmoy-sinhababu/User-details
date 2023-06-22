@@ -3,13 +3,13 @@ import { createContext, useState } from 'react';
 export const DataContext = createContext();
 
 const GlobalState = ({ children }) => {
+  const [currentData, setCurrentData] = useState([]);
   const [userData, setUserData] = useState({
     name: '',
     email: '',
     number: '',
     id: '',
   });
-  const [mainData, setMainData] = useState([]);
   const [err, setErr] = useState({ nameEr: '', maiEr: '', numEr: '' });
 
   const controlSave = () => {
@@ -35,17 +35,21 @@ const GlobalState = ({ children }) => {
     if (!numberRegex.test(userData.number)) {
       setErr({ ...err, numEr: 'wrong format' });
     } else {
-      setUserData({ ...userData, id: idGenerator() });
-      setMainData({ ...mainData, userData });
+      let newData = { ...userData, id: idGenerator() };
+      setUserData(newData);
+      setCurrentData([...currentData, newData]);
     }
   };
-  console.log(mainData);
+  console.log(currentData);
+
   const idGenerator = () => {
-    return Math.floor(Math.random() * 100000);
+    return Math.floor(Math.random() * 100000) + 1;
   };
 
   return (
-    <DataContext.Provider value={{ setUserData, userData, controlSave }}>
+    <DataContext.Provider
+      value={{ setUserData, userData, err, controlSave, currentData }}
+    >
       {children}
     </DataContext.Provider>
   );
