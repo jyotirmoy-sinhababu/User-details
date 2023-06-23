@@ -21,20 +21,15 @@ const GlobalState = ({ children }) => {
 
     if (!userData.name) {
       setErr({ ...err, nameEr: 'enter the name' });
-    }
-    if (!nameRegex.test(userData.name)) {
+    } else if (!nameRegex.test(userData.name)) {
       setErr({ ...err, nameEr: 'wrong format' });
-    }
-    if (!userData.email) {
+    } else if (!userData.email) {
       setErr({ ...err, maiEr: 'enter the email' });
-    }
-    if (!emailRegex.test(userData.email)) {
+    } else if (!emailRegex.test(userData.email)) {
       setErr({ ...err, maiEr: 'wrong format' });
-    }
-    if (!userData.number) {
+    } else if (!userData.number) {
       setErr({ ...err, numEr: 'enter the mobile number' });
-    }
-    if (!numberRegex.test(userData.number)) {
+    } else if (!numberRegex.test(userData.number)) {
       setErr({ ...err, numEr: 'wrong format' });
     } else {
       let newData = { ...userData, id: idGenerator() };
@@ -42,14 +37,12 @@ const GlobalState = ({ children }) => {
       setCurrentData([...currentData, newData]);
     }
   };
-
   const searchFunction = (param) => {
     const newData = param.toLowerCase();
     const filteredData = currentData?.filter((item) => {
       return item.name.includes(newData);
     });
     setSearchList(filteredData);
-    console.log(filteredData);
   };
 
   const idGenerator = () => {
@@ -67,6 +60,7 @@ const GlobalState = ({ children }) => {
         currentData,
         searchFunction,
         searchList,
+        setErr,
       }}
     >
       {children}

@@ -53,6 +53,10 @@
   font-size: 19px;
 }
 
+.er-txt {
+  color: red;
+}
+
 .form-btn-cnt {
   display: flex;
   padding-top: 20px;

@@ -8,7 +8,7 @@ import './userFormStyle.css';
 import user from '../../assests/images/computer-user.png';
 
 const UserForm = ({ setIsOpen }) => {
-  const { userData, setUserData, controlSave } = useContext(DataContext);
+  const { userData, setUserData, controlSave, err } = useContext(DataContext);
 
   const handleChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -34,6 +34,13 @@ const UserForm = ({ setIsOpen }) => {
           onSubmit={(e) => {
             e.preventDefault();
             controlSave();
+            setIsOpen(false);
+            setUserData({
+              name: '',
+              email: '',
+              number: '',
+              id: '',
+            });
           }}
         >
           <label>Enter the name</label>
@@ -45,6 +52,7 @@ const UserForm = ({ setIsOpen }) => {
             className='inputField'
             type='text'
           />
+          {err ? <p className='er-txt'>{err.nameEr}</p> : null}
           <label>Enter the email</label>
           <input
             onChange={(e) => {
@@ -54,6 +62,7 @@ const UserForm = ({ setIsOpen }) => {
             className='inputField'
             type='email'
           />
+          {err ? <p className='er-txt'>{err.maiEr}</p> : null}
           <label>Enter the phone number</label>
           <input
             onChange={(e) => {
@@ -63,6 +72,8 @@ const UserForm = ({ setIsOpen }) => {
             className='inputField'
             type='number'
           />
+          {err ? <p className='er-txt'>{err.numEr}</p> : null}
+
           <div className='form-btn-cnt'>
             <button type='submit' className='form-btn'>
               SAVE

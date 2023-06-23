@@ -8,15 +8,32 @@ import { DataContext } from '../../context/Provider';
 import './editStyle.css';
 
 const EditForm = ({ setIsEdit, item }) => {
-  const { setCurrentData, currentData } = useContext(DataContext);
+  const { setCurrentData, currentData, setErr, err } = useContext(DataContext);
   const [editedData, setEditedData] = useState(item);
-  console.log(item);
+
   const handleEdit = (param) => {
-    const filterData = currentData.filter((item) => {
-      return item.id != param.id;
-    });
-    filterData.push(param);
-    setCurrentData(filterData);
+    const nameRegex = /^[a-zA-Z\s]*$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const numberRegex = /^[0-9]+$/;
+    if (!param.name) {
+      setErr({ ...err, nameEr: 'enter the name' });
+    } else if (!nameRegex.test(param.name)) {
+      setErr({ ...err, nameEr: 'wrong format' });
+    } else if (!param.email) {
+      setErr({ ...err, maiEr: 'enter the email' });
+    } else if (!emailRegex.test(param.email)) {
+      setErr({ ...err, maiEr: 'wrong format' });
+    } else if (!param.number) {
+      setErr({ ...err, numEr: 'enter the mobile number' });
+    } else if (!numberRegex.test(param.number)) {
+      setErr({ ...err, numEr: 'wrong format' });
+    } else {
+      const filterData = currentData.filter((item) => {
+        return item.id != param.id;
+      });
+      filterData.push(param);
+      setCurrentData(filterData);
+    }
   };
 
   const handleChange = (e) => {
@@ -47,6 +64,7 @@ const EditForm = ({ setIsEdit, item }) => {
           onSubmit={(e) => {
             e.preventDefault();
             handleEdit(editedData);
+            setIsEdit(false);
           }}
         >
           <label>Enter the name</label>
@@ -59,6 +77,7 @@ const EditForm = ({ setIsEdit, item }) => {
             type='text'
             value={editedData.name}
           />
+          {err ? <p className='er-txt'>{err.nameEr}</p> : null}
           <label>Enter the email</label>
           <input
             onChange={(e) => {
@@ -69,6 +88,7 @@ const EditForm = ({ setIsEdit, item }) => {
             type='email'
             value={editedData.email}
           />
+          {err ? <p className='er-txt'>{err.maiEr}</p> : null}
           <label>Enter the phone number</label>
           <input
             onChange={(e) => {
@@ -79,6 +99,8 @@ const EditForm = ({ setIsEdit, item }) => {
             type='number'
             value={editedData.number}
           />
+          {err ? <p className='er-txt'>{err.numEr}</p> : null}
+
           <div className='form-btn-cnt'>
             <button type='submit' className='form-btn'>
               SAVE
