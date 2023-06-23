@@ -4,39 +4,74 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  border: 2px solid hsl(197, 94%, 53%);
+  border: 1px solid #dbdbdb;
   width: 300px;
-  height: 250px;
+  height: fit-content;
   border-radius: 7px;
-  background-color: aliceblue;
-  padding-left: 10px;
+  background-color: white;
+  padding: 20px 8px 16px 6px;
+  position: relative;
+}
+
+.card-info-cnt {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-icon {
+  font-size: 30px;
+  color: hsl(197, 94%, 53%);
+  margin-right: 4px;
+}
+
+.user-info {
+  padding-left: 40px;
+}
+
+.user-cnt {
+  display: flex;
+  gap: 4px;
+  align-items: center;
 }
 
 .display-btn-cnt {
   display: flex;
   justify-content: flex-end;
-  padding-right: 25px;
-  gap: 24px;
+  gap: 8px;
+  position: absolute;
+  top: 6px;
+  right: 6px;
 }
 
 .display-delete-btn,
 .display-edit-btn {
   border: none;
-  background-color: aliceblue;
-  font-size: 23px;
+  background-color: transparent;
+  font-size: 16px;
   color: rgb(8, 104, 104);
   cursor: pointer;
 }
 
 .display-text {
   font-family: 'Be Vietnam Pro', sans-serif;
-  color: rgb(35, 16, 3);
+  color: #797979;
+  font-size: 14px;
+  margin-top: 4px;
 }
 
-.display-delete-btn:hover {
+.name {
+  font-family: 'Be Vietnam Pro', sans-serif;
+
+  font-weight: 500;
+  color: rgba(0, 0, 0, 7);
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.display-delete-btn {
   color: red;
 }
 
-.display-edit-btn:hover {
+.display-edit-btn {
   color: rgb(90, 90, 240);
 }

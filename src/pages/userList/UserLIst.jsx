@@ -18,15 +18,7 @@ const UserLIst = () => {
       <Nav />
       {currentData.length ? (
         <div className='userList-display-cnt'>
-          {currentData
-            ? currentData?.map((item) => {
-                return (
-                  <div key={item.id}>
-                    <DisplayCard item={item} />
-                  </div>
-                );
-              })
-            : searchList
+          {searchList?.length > 0
             ? searchList?.map((item) => {
                 return (
                   <div key={item.id}>
@@ -34,7 +26,13 @@ const UserLIst = () => {
                   </div>
                 );
               })
-            : null}
+            : currentData?.map((item) => {
+                return (
+                  <div key={item.id}>
+                    <DisplayCard item={item} />
+                  </div>
+                );
+              })}
         </div>
       ) : (
         <div className='userList-noData-msg-cnt'>

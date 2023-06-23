@@ -7,7 +7,7 @@ import EditForm from '../edited/EditForm';
 
 import Modal from '../../modal/Modal';
 
-import { FaRegEdit } from 'react-icons/fa';
+import { FaRegEdit, FaUserCircle } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
 
 const DisplayCard = ({ item }) => {
@@ -23,15 +23,23 @@ const DisplayCard = ({ item }) => {
 
   return (
     <div className='display-cnt'>
-      <p className='display-text'>
-        <strong className='display-strong'>Name :</strong> {item.name}
-      </p>
-      <p className='display-text'>
-        <strong className='display-strong'>Email :</strong> {item.email}
-      </p>
-      <p className='display-text'>
-        <strong className='display-strong'>Number :</strong> {item.number}
-      </p>
+      <div className='card-info-cnt'>
+        <div className='user-cnt'>
+          <FaUserCircle className='user-icon' />
+          <p className=' name'>
+            <strong className='display-strong'></strong> {item.name}
+          </p>
+        </div>
+
+        <div className='user-info'>
+          <p className='display-text'>
+            <strong className='display-strong'></strong> {item.email}
+          </p>
+          <p className='display-text'>
+            <strong className='display-strong'></strong> {item.number}
+          </p>
+        </div>
+      </div>
       <div className='display-btn-cnt'>
         <button
           className='display-edit-btn'
@@ -49,11 +57,12 @@ const DisplayCard = ({ item }) => {
         >
           <MdDelete />
         </button>
-        <div>
-          <Modal isOpen={isEdit}>
-            <EditForm item={item} setIsEdit={setIsEdit} />
-          </Modal>
-        </div>
+      </div>
+
+      <div>
+        <Modal isOpen={isEdit}>
+          <EditForm item={item} setIsEdit={setIsEdit} />
+        </Modal>
       </div>
     </div>
   );

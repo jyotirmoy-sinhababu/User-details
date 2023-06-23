@@ -1,19 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Be+Vietnam+Pro&family=Bruno+Ace+SC&family=Epilogue&family=Montserrat+Alternates:wght@200&family=Nunito+Sans:ital,wght@0,400;1,200&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Be+Vietnam+Pro&family=Bruno+Ace+SC&family=Epilogue&family=Montserrat+Alternates:wght@200&family=Oooh+Baby&display=swap');
 .nav-cnt {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 10%;
   align-items: center;
   height: 100px;
+}
+.logo {
+  background-color: hsl(197, 94%, 53%);
+  font-size: 26px;
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  color: white;
+  font-family: 'Oooh Baby', cursive;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-txt {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 900;
   font-size: 25px;
-  color: hsl(197, 94%, 53%);
+  color: rgba(0, 0, 0, 0.7);
 }
 
+.logo-hdng-cnt {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
 .nav-search-bar {
   width: 280px;
   height: 52px;

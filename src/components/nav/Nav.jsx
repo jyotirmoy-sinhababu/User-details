@@ -8,8 +8,11 @@ const Nav = () => {
   // const [searchName, setSearchName] = useState('');
   return (
     <div className='nav-cnt'>
-      <div className='nav-txt-cnt'>
-        <p className='nav-txt'>Keep track..</p>
+      <div className='logo-hdng-cnt'>
+        <div className='logo'>K</div>
+        <div className='nav-txt-cnt'>
+          <p className='nav-txt'>User List</p>
+        </div>
       </div>
       <form className='nav-form'>
         <input

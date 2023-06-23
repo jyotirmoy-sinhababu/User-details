@@ -80,3 +80,9 @@
     background-color: rgb(193, 248, 193);
   }
 }
+
+@media screen and (max-width: 750px) {
+  .userForm-img-cnt {
+    display: none;
+  }
+}

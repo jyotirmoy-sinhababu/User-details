@@ -45,11 +45,11 @@ const GlobalState = ({ children }) => {
 
   const searchFunction = (param) => {
     const newData = param.toLowerCase();
-    const filteredData = currentData.filter((item) => {
-      return item.name != newData;
+    const filteredData = currentData?.filter((item) => {
+      return item.name.includes(newData);
     });
-    setSearchList({ ...searchList, filteredData });
-    console.log('ok');
+    setSearchList(filteredData);
+    console.log(filteredData);
   };
 
   const idGenerator = () => {
