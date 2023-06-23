@@ -13,3 +13,11 @@
   font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 900;
 }
+
+.userList-display-cnt {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 21px;
+  padding-left: 18%;
+  padding-top: 55px;
+}

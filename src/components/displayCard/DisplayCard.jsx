@@ -22,18 +22,19 @@ const DisplayCard = ({ item }) => {
   };
 
   return (
-    <div>
-      <p>
-        <strong>Name :</strong> {item.name}
+    <div className='display-cnt'>
+      <p className='display-text'>
+        <strong className='display-strong'>Name :</strong> {item.name}
       </p>
-      <p>
-        <strong>Email :</strong> {item.email}
+      <p className='display-text'>
+        <strong className='display-strong'>Email :</strong> {item.email}
       </p>
-      <p>
-        <strong>Number :</strong> {item.number}
+      <p className='display-text'>
+        <strong className='display-strong'>Number :</strong> {item.number}
       </p>
-      <div>
+      <div className='display-btn-cnt'>
         <button
+          className='display-edit-btn'
           onClick={() => {
             setIsEdit(true);
           }}
@@ -41,6 +42,7 @@ const DisplayCard = ({ item }) => {
           <FaRegEdit />
         </button>
         <button
+          className='display-delete-btn'
           onClick={() => {
             deleteFunction(item);
           }}

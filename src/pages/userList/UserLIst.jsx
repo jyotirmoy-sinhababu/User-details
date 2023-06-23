@@ -17,7 +17,7 @@ const UserLIst = () => {
     <div className='mainUser-cnt'>
       <Nav />
       {currentData.length ? (
-        <div>
+        <div className='userList-display-cnt'>
           {currentData?.map((item) => {
             return (
               <div key={item.id}>
