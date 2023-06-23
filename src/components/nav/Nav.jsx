@@ -5,7 +5,7 @@ import './nav.css';
 
 const Nav = () => {
   const { searchFunction } = useContext(DataContext);
-  const [searchName, setSearchName] = useState('');
+  // const [searchName, setSearchName] = useState('');
   return (
     <div className='nav-cnt'>
       <div className='nav-txt-cnt'>
@@ -14,13 +14,12 @@ const Nav = () => {
       <form className='nav-form'>
         <input
           onChange={(e) => {
-            setSearchName({ ...searchName, [e.target.name]: e.target.value });
-            searchFunction(searchName.userName);
+            // setSearchName({ ...searchName, [e.target.name]: e.target.value });
+            searchFunction(e.target.value);
           }}
           type='search'
           placeholder='search by name'
           className='nav-search-bar'
-          name='userName'
         />
       </form>
     </div>

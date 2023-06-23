@@ -53,3 +53,47 @@
   border: none;
   background-color: rgb(9, 126, 146);
 }
+
+@media screen and (max-width: 870px) {
+  .mainPage-cnt {
+    padding-top: 7%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    background-color: white;
+    height: 100vh;
+    align-items: center;
+  }
+
+  .mainPage-img {
+    width: 400px;
+  }
+
+  .mainPage-header {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 55px;
+  }
+  .mainPage-txt-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 470px) {
+  .mainPage-img {
+    width: 350px;
+  }
+  .mainPage-header {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 45px;
+  }
+  .mainPage-txt-area {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    gap: 30px;
+    padding-left: 5px;
+  }
+}

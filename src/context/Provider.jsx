@@ -49,6 +49,7 @@ const GlobalState = ({ children }) => {
       return item.name != newData;
     });
     setSearchList({ ...searchList, filteredData });
+    console.log('ok');
   };
 
   const idGenerator = () => {

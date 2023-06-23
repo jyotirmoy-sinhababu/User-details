@@ -18,16 +18,16 @@ const UserLIst = () => {
       <Nav />
       {currentData.length ? (
         <div className='userList-display-cnt'>
-          {searchList
-            ? searchList?.map((item) => {
+          {currentData
+            ? currentData?.map((item) => {
                 return (
                   <div key={item.id}>
                     <DisplayCard item={item} />
                   </div>
                 );
               })
-            : currentData
-            ? currentData?.map((item) => {
+            : searchList
+            ? searchList?.map((item) => {
                 return (
                   <div key={item.id}>
                     <DisplayCard item={item} />
