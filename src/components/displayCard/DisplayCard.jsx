@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 
 import { DataContext } from '../../context/Provider';
+import EditForm from '../edited/EditForm';
+
+import Modal from '../../modal/Modal';
 
 const DisplayCard = () => {
   const { currentData } = useContext(DataContext);
@@ -10,17 +13,28 @@ const DisplayCard = () => {
       {currentData
         ? currentData?.map((item) => {
             return (
-              <form key={item.id}>
-                <label>Name :</label>
-                <input type='text' value={item.name} />
-                <label>Email :</label>
-                <input type='email' placeholder='' value={item.email} />
-                <label>Number :</label>
-                <input type='number' value={item.number} />
-              </form>
+              <div key={item.id}>
+                <p>
+                  <strong>Name :</strong>
+                  {item.name}
+                </p>
+                <p>
+                  <strong>Email :</strong>
+                  {item.email}
+                </p>
+                <p>
+                  <strong>Number :</strong>
+                  {item.number}
+                </p>
+              </div>
             );
           })
         : null}
+      <div>
+        <Modal>
+          <EditForm />
+        </Modal>
+      </div>
     </div>
   );
 };

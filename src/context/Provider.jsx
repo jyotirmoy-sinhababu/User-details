@@ -40,7 +40,6 @@ const GlobalState = ({ children }) => {
       setCurrentData([...currentData, newData]);
     }
   };
-  console.log(currentData);
 
   const idGenerator = () => {
     return Math.floor(Math.random() * 100000) + 1;
