@@ -2,6 +2,9 @@
   display: flex;
   justify-content: flex-end;
   padding-right: 10%;
+  position: fixed;
+  right: 9%;
+  bottom: 12%;
 }
 
 .addBtn {
@@ -14,6 +17,16 @@
   align-items: center;
   cursor: pointer;
   border: none;
-  position: fixed;
   background-color: rgb(198, 225, 248);
+}
+
+@media screen and (max-width: 800px) {
+  .addBtn-cnt {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10%;
+    position: fixed;
+    right: 7%;
+    bottom: 12%;
+  }
 }

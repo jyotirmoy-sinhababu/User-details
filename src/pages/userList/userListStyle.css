@@ -21,3 +21,19 @@
   padding-left: 18%;
   padding-top: 55px;
 }
+
+@media screen and (max-width: 870px) {
+  .noData-msg {
+    font-size: 45px;
+    color: rgb(180, 218, 252);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 900;
+  }
+
+  .userList-noData-msg-cnt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+  }
+}

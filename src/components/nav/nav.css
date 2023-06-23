@@ -26,3 +26,14 @@
   border: 0.8px solid hsl(197, 95%, 67%);
   color: hsl(235, 18%, 26%);
 }
+
+@media screen and (max-width: 800px) {
+  .nav-cnt {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100px;
+    padding-top: 25px;
+    padding-right: 10%;
+  }
+}
