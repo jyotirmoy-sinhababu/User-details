@@ -11,20 +11,30 @@ import UserForm from '../../components/userForm/UserForm';
 import DisplayCard from '../../components/displayCard/DisplayCard';
 
 const UserLIst = () => {
-  const { currentData } = useContext(DataContext);
+  const { currentData, searchList } = useContext(DataContext);
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className='mainUser-cnt'>
       <Nav />
       {currentData.length ? (
         <div className='userList-display-cnt'>
-          {currentData?.map((item) => {
-            return (
-              <div key={item.id}>
-                <DisplayCard item={item} />
-              </div>
-            );
-          })}
+          {searchList
+            ? searchList?.map((item) => {
+                return (
+                  <div key={item.id}>
+                    <DisplayCard item={item} />
+                  </div>
+                );
+              })
+            : currentData
+            ? currentData?.map((item) => {
+                return (
+                  <div key={item.id}>
+                    <DisplayCard item={item} />
+                  </div>
+                );
+              })
+            : null}
         </div>
       ) : (
         <div className='userList-noData-msg-cnt'>

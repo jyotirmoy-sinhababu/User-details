@@ -12,6 +12,8 @@ const GlobalState = ({ children }) => {
   });
   const [err, setErr] = useState({ nameEr: '', maiEr: '', numEr: '' });
 
+  const [searchList, setSearchList] = useState([]);
+
   const controlSave = () => {
     const nameRegex = /^[a-zA-Z\s]*$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -41,6 +43,14 @@ const GlobalState = ({ children }) => {
     }
   };
 
+  const searchFunction = (param) => {
+    const newData = param.toLowerCase();
+    const filteredData = currentData.filter((item) => {
+      return item.name != newData;
+    });
+    setSearchList({ ...searchList, filteredData });
+  };
+
   const idGenerator = () => {
     return Math.floor(Math.random() * 100000) + 1;
   };
@@ -54,6 +64,8 @@ const GlobalState = ({ children }) => {
         err,
         controlSave,
         currentData,
+        searchFunction,
+        searchList,
       }}
     >
       {children}
