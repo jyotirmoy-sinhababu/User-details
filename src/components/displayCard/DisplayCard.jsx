@@ -4,11 +4,20 @@ import { DataContext } from '../../context/Provider';
 import EditForm from '../edited/EditForm';
 
 import Modal from '../../modal/Modal';
+
 import { FaRegEdit } from 'react-icons/fa';
+import { MdDelete } from 'react-icons/md';
 
 const DisplayCard = () => {
-  const { currentData } = useContext(DataContext);
+  const { currentData, setCurrentData } = useContext(DataContext);
   const [isEdit, setIsEdit] = useState(false);
+
+  const deleteFunction = (param) => {
+    const filterData = currentData.filter((item) => {
+      return item.id != param.id;
+    });
+    setCurrentData(filterData);
+  };
 
   return (
     <div>
@@ -16,6 +25,15 @@ const DisplayCard = () => {
         ? currentData?.map((item) => {
             return (
               <div key={item.id}>
+                <div>
+                  <button
+                    onClick={() => {
+                      deleteFunction(item);
+                    }}
+                  >
+                    <MdDelete />
+                  </button>
+                </div>
                 <p>
                   <strong>Name :</strong>
                   {item.name}
@@ -36,7 +54,6 @@ const DisplayCard = () => {
                   >
                     <FaRegEdit />
                   </button>
-                  <button></button>
                 </div>
               </div>
             );

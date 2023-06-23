@@ -47,7 +47,14 @@ const GlobalState = ({ children }) => {
 
   return (
     <DataContext.Provider
-      value={{ setUserData, userData, err, controlSave, currentData }}
+      value={{
+        setUserData,
+        setCurrentData,
+        userData,
+        err,
+        controlSave,
+        currentData,
+      }}
     >
       {children}
     </DataContext.Provider>

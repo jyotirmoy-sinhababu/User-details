@@ -1,19 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import { RxCross1 } from 'react-icons/rx';
 import user from '../../assests/images/computer-user.png';
 
+import { DataContext } from '../../context/Provider';
+
 import './editStyle.css';
 
 const EditForm = ({ setIsEdit }) => {
-  const [editedData, setEditedData] = useState();
-  const handleChange = () => {
+  const { userData, setCurrentData } = useContext(DataContext);
+  const [editedData, setEditedData] = useState(userData);
+  const [filteredData, setFilteredData] = useState([userData]);
+
+  const handleEdit = (param) => {
+    const filterData = filteredData.filter((item) => {
+      return item.id != param.id;
+    });
+    filterData.push(param);
+    setCurrentData(filterData);
+  };
+
+  const handleChange = (e) => {
     setEditedData({
       ...editedData,
       [e.target.name]: e.target.value,
     });
   };
 
+  console.log(editedData.name);
   return (
     <div className='main-edit-form'>
       <div className='userForm-btn-cnt'>
@@ -44,6 +58,7 @@ const EditForm = ({ setIsEdit }) => {
             name='name'
             className='inputField'
             type='text'
+            value={editedData.name}
           />
           <label>Enter the email</label>
           <input
@@ -53,6 +68,7 @@ const EditForm = ({ setIsEdit }) => {
             name='email'
             className='inputField'
             type='email'
+            value={editedData.email}
           />
           <label>Enter the phone number</label>
           <input
@@ -62,9 +78,16 @@ const EditForm = ({ setIsEdit }) => {
             name='number'
             className='inputField'
             type='number'
+            value={editedData.number}
           />
           <div className='form-btn-cnt'>
-            <button type='submit' className='form-btn'>
+            <button
+              onClick={() => {
+                handleEdit(editedData);
+              }}
+              type='submit'
+              className='form-btn'
+            >
               SAVE
             </button>
           </div>
