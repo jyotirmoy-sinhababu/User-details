@@ -11,17 +11,18 @@
   font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 900;
   font-size: 25px;
-  color: hsl(4, 100%, 67%);
+  color: hsl(197, 94%, 53%);
 }
 
 .nav-search-bar {
   width: 280px;
   height: 52px;
+  border: none;
   border-radius: 70px;
   padding-left: 25px;
   font-size: 19px;
   font-weight: 500;
   font-family: 'Nunito Sans', sans-serif;
-  border: 0.8px solid hsl(4, 83%, 71%);
+  border: 0.8px solid hsl(197, 95%, 67%);
   color: hsl(235, 18%, 26%);
 }

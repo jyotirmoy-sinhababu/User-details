@@ -6,3 +6,10 @@
   align-items: center;
   height: 600px;
 }
+
+.noData-msg {
+  font-size: 55px;
+  color: rgb(180, 218, 252);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 900;
+}
