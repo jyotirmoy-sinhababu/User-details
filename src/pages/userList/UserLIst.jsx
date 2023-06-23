@@ -17,7 +17,15 @@ const UserLIst = () => {
     <div className='mainUser-cnt'>
       <Nav />
       {currentData.length ? (
-        <DisplayCard />
+        <div>
+          {currentData?.map((item) => {
+            return (
+              <div key={item.id}>
+                <DisplayCard item={item} />
+              </div>
+            );
+          })}
+        </div>
       ) : (
         <div className='userList-noData-msg-cnt'>
           <h1 className='noData-msg'>You have no User</h1>

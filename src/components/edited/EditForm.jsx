@@ -7,13 +7,12 @@ import { DataContext } from '../../context/Provider';
 
 import './editStyle.css';
 
-const EditForm = ({ setIsEdit }) => {
-  const { userData, setCurrentData } = useContext(DataContext);
-  const [editedData, setEditedData] = useState(userData);
-  const [filteredData, setFilteredData] = useState([userData]);
-
+const EditForm = ({ setIsEdit, item }) => {
+  const { setCurrentData, currentData } = useContext(DataContext);
+  const [editedData, setEditedData] = useState(item);
+  console.log(item);
   const handleEdit = (param) => {
-    const filterData = filteredData.filter((item) => {
+    const filterData = currentData.filter((item) => {
       return item.id != param.id;
     });
     filterData.push(param);
@@ -27,9 +26,8 @@ const EditForm = ({ setIsEdit }) => {
     });
   };
 
-  console.log(editedData.name);
   return (
-    <div className='main-edit-form'>
+    <div className='main-userForm-cnt'>
       <div className='userForm-btn-cnt'>
         <button
           className='userForm-btn'
@@ -48,6 +46,7 @@ const EditForm = ({ setIsEdit }) => {
           className='form'
           onSubmit={(e) => {
             e.preventDefault();
+            handleEdit(editedData);
           }}
         >
           <label>Enter the name</label>
@@ -81,13 +80,7 @@ const EditForm = ({ setIsEdit }) => {
             value={editedData.number}
           />
           <div className='form-btn-cnt'>
-            <button
-              onClick={() => {
-                handleEdit(editedData);
-              }}
-              type='submit'
-              className='form-btn'
-            >
+            <button type='submit' className='form-btn'>
               SAVE
             </button>
           </div>

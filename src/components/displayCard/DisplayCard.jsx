@@ -1,6 +1,8 @@
-import React, { useContext, useState } from 'react';
-
+import React, { useState, useContext } from 'react';
 import { DataContext } from '../../context/Provider';
+
+import './displayCardStyle.css';
+
 import EditForm from '../edited/EditForm';
 
 import Modal from '../../modal/Modal';
@@ -8,7 +10,7 @@ import Modal from '../../modal/Modal';
 import { FaRegEdit } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
 
-const DisplayCard = () => {
+const DisplayCard = ({ item }) => {
   const { currentData, setCurrentData } = useContext(DataContext);
   const [isEdit, setIsEdit] = useState(false);
 
@@ -21,48 +23,35 @@ const DisplayCard = () => {
 
   return (
     <div>
-      {currentData
-        ? currentData?.map((item) => {
-            return (
-              <div key={item.id}>
-                <div>
-                  <button
-                    onClick={() => {
-                      deleteFunction(item);
-                    }}
-                  >
-                    <MdDelete />
-                  </button>
-                </div>
-                <p>
-                  <strong>Name :</strong>
-                  {item.name}
-                </p>
-                <p>
-                  <strong>Email :</strong>
-                  {item.email}
-                </p>
-                <p>
-                  <strong>Number :</strong>
-                  {item.number}
-                </p>
-                <div>
-                  <button
-                    onClick={() => {
-                      setIsEdit(true);
-                    }}
-                  >
-                    <FaRegEdit />
-                  </button>
-                </div>
-              </div>
-            );
-          })
-        : null}
+      <p>
+        <strong>Name :</strong> {item.name}
+      </p>
+      <p>
+        <strong>Email :</strong> {item.email}
+      </p>
+      <p>
+        <strong>Number :</strong> {item.number}
+      </p>
       <div>
-        <Modal isOpen={isEdit}>
-          <EditForm setIsEdit={setIsEdit} />
-        </Modal>
+        <button
+          onClick={() => {
+            setIsEdit(true);
+          }}
+        >
+          <FaRegEdit />
+        </button>
+        <button
+          onClick={() => {
+            deleteFunction(item);
+          }}
+        >
+          <MdDelete />
+        </button>
+        <div>
+          <Modal isOpen={isEdit}>
+            <EditForm item={item} setIsEdit={setIsEdit} />
+          </Modal>
+        </div>
       </div>
     </div>
   );
