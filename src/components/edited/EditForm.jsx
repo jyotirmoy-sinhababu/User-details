@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { RxCross1 } from 'react-icons/rx';
 import user from '../../assests/images/computer-user.png';
 
 import './editStyle.css';
 
-const EditForm = () => {
+const EditForm = ({ setIsEdit }) => {
+  const [editedData, setEditedData] = useState();
+  const handleChange = () => {
+    setEditedData({
+      ...editedData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <div className='main-edit-form'>
       <div className='userForm-btn-cnt'>
         <button
           className='userForm-btn'
-          // onClick={() => {
-          //   setIsOpen(false);
-          // }}
+          onClick={() => {
+            setIsEdit(false);
+          }}
         >
           <RxCross1 />
         </button>
@@ -24,34 +32,33 @@ const EditForm = () => {
         </div>
         <form
           className='form'
-          // onSubmit={(e) => {
-          //   e.preventDefault();
-          //   controlSave();
-          // }}
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
         >
           <label>Enter the name</label>
           <input
-            // onChange={(e) => {
-            //   handleChange(e);
-            // }}
+            onChange={(e) => {
+              handleChange(e);
+            }}
             name='name'
             className='inputField'
             type='text'
           />
           <label>Enter the email</label>
           <input
-            // onChange={(e) => {
-            //   handleChange(e);
-            // }}
+            onChange={(e) => {
+              handleChange(e);
+            }}
             name='email'
             className='inputField'
             type='email'
           />
           <label>Enter the phone number</label>
           <input
-            // onChange={(e) => {
-            //   handleChange(e);
-            // }}
+            onChange={(e) => {
+              handleChange(e);
+            }}
             name='number'
             className='inputField'
             type='number'

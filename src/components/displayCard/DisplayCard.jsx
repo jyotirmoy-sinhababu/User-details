@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { DataContext } from '../../context/Provider';
 import EditForm from '../edited/EditForm';
 
 import Modal from '../../modal/Modal';
+import { FaRegEdit } from 'react-icons/fa';
 
 const DisplayCard = () => {
   const { currentData } = useContext(DataContext);
+  const [isEdit, setIsEdit] = useState(false);
 
   return (
     <div>
@@ -26,13 +28,23 @@ const DisplayCard = () => {
                   <strong>Number :</strong>
                   {item.number}
                 </p>
+                <div>
+                  <button
+                    onClick={() => {
+                      setIsEdit(true);
+                    }}
+                  >
+                    <FaRegEdit />
+                  </button>
+                  <button></button>
+                </div>
               </div>
             );
           })
         : null}
       <div>
-        <Modal>
-          <EditForm />
+        <Modal isOpen={isEdit}>
+          <EditForm setIsEdit={setIsEdit} />
         </Modal>
       </div>
     </div>
